@@ -1,0 +1,35 @@
+sources:
+  owned:
+    - name: "Crypto Times"
+      type: "rss"
+      url: "https://crypto-times.jp/feed/"
+      fallback_url: "https://crypto-times.jp/wp-json/wp/v2/posts?per_page=20"
+  official:
+    - name: "CoinDesk"
+      type: "rss"
+      url: "https://www.coindesk.com/arc/outboundfeeds/rss/"
+    - name: "The Block"
+      type: "rss"
+      url: "https://www.theblock.co/rss.xml"
+    - name: "Cointelegraph"
+      type: "rss"
+      url: "https://cointelegraph.com/rss"
+    - name: "DL News"
+      type: "rss"
+      url: "https://www.dlnews.com/arc/outboundfeeds/rss/"
+  market:
+    - name: "CoinGecko"
+      type: "api"
+      url: "https://api.coingecko.com/api/v3"
+
+scoring:
+  weights:
+    source_reliability: 0.25
+    market_impact: 0.25
+    novelty: 0.15
+    japan_relevance: 0.15
+    time_sensitivity: 0.10
+    cross_source_confirmation: 0.10
+  quiet_day:
+    p1_min: 1
+    p2_min: 2
